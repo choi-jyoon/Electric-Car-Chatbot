@@ -38,8 +38,8 @@ with open('충전소현황.txt', 'r', encoding='utf-8') as f:
 
 st.header("전기차 충전소 현황 정보")
 st.info("전국 전기차 충전소 정보를 알려주는 챗봇입니다.")
-# st.error("교육 커리큘럼 내용이 적용되어 있습니다.")
 
+# 사이드바 
 with st.sidebar:
     st.header('전기차 충전소 Chatbot', divider = 'rainbow')
     #st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
@@ -51,7 +51,7 @@ with st.sidebar:
         st.session_state.messages = [ChatMessage(role="assistant", content="안녕하세요! 전기차 충전소 정보 챗봇입니다. 어떤 내용이 궁금하신가요?")]
     st.sidebar.button('Clear Chat', on_click=clear_chat, type='primary')
 
-
+# 상태 관리
 if "messages" not in st.session_state:
     st.session_state["messages"] = [ChatMessage(role="assistant", content="안녕하세요! 전기차 충전소 정보 챗봇입니다. 어떤 내용이 궁금하신가요?")]
 
